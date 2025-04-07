@@ -3,34 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Stopwatch</title>
+    <title>Improved Stopwatch</title>
     <link rel="stylesheet" href="style.css">
-    
+</head>
 <body>
     <div class="container">
         <h2 class="rnds">Rounds</h2>
-        <!-- <div class="rounds">
-            <div class="rnd_no">Round 1</div>
-            <div class="laps">
-                <div class="lapno">1</div>
-                <div class="laptime">adfi</div>
-            </div>
-            <div class="totaltime">TotalTime - 00:00:00:00 </div>
-        </div> -->
+        <!-- Rounds will be added here dynamically -->
     </div>
-    <h3>STOP WATCH</h3>
-    <div class="box">
-        <div class="time">
-            <span class="dd">00</span> :
-            <span class="hh">00</span> :
-            <span class="mm">00</span> :
-            <span class="ss">00</span>
-        </div>
-        <div class="btns">
-            <button class="start">Start</button>
-            <button class="pause">Pause</button>
-            <button class="reset">Stop</button>
-            <button class="lap">Lap</button>
+    <div class="stopwatch-container">
+        <h3>STOPWATCH</h3>
+        <div class="box">
+            <div class="time">
+                <div class="time-display">
+                    <span class="dd">00</span>:<span class="hh">00</span>:<span class="mm">00</span>:<span class="ss">00</span>
+                </div>
+                <div class="time-labels">
+                    <span>Days</span>
+                    <span>Hours</span>
+                    <span>Mins</span>
+                    <span>Secs</span>
+                </div>
+            </div>
+            <div class="btns">
+                <button class="start">Start</button>
+                <button class="pause">Pause</button>
+                <button class="reset">Reset</button>
+                <button class="lap">Lap</button>
+            </div>
+            <div class="shortcuts">
+                <p>Keyboard Shortcuts: Space (Start/Pause), L (Lap), R (Reset)</p>
+            </div>
         </div>
     </div>
     <script src="app.js"></script>

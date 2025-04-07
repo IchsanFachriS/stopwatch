@@ -1,210 +1,319 @@
-body{
+body {
     margin: 0;
+    padding: 0;
     display: flex;
-    background-color:rgb(14, 30, 60);
+    background-color: rgb(14, 30, 60);
     color: white;
-    text-align: center;
+    font-family: 'Arial', sans-serif;
+    min-height: 100vh;
 }
-.container{
+
+.container {
     height: 670px;
     width: 430px;
     background-color: rgba(255, 255, 255, 0.1);
     margin: 20px;
-    border-radius: 5px;
-    overflow-y: scroll;
+    border-radius: 10px;
+    overflow-y: auto;
     text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
-.container::-webkit-scrollbar{
+
+.container::-webkit-scrollbar {
     background-color: rgb(157, 157, 157);
     width: 10px;
     border-radius: 5px;
 }
-.container::-webkit-scrollbar-thumb{
+
+.container::-webkit-scrollbar-thumb {
     border-radius: 5px;
     background-color: rgb(134, 191, 220);
 }
-.container h2{
-    height: 30px;
-}
-.rnds{
+
+.rnds {
     text-align: center;
     color: white;
     font-weight: bold;
     font-size: 28px;
+    margin-top: 15px;
+    position: sticky;
+    top: 0;
+    background-color: rgba(14, 30, 60, 0.8);
+    padding: 10px 0;
+    z-index: 10;
 }
-.rnd_no{
+
+.rnd_no {
     text-align: center;
     background-color: rgb(25, 104, 99);
     font-size: 18px;
     font-weight: bold;
     margin: 5px;
+    padding: 8px 0;
     color: rgb(224, 221, 221);
+    border-radius: 5px;
 }
-.rounds{
-    height: 100px;
+
+.rounds {
     background-color: rgb(215, 232, 245);
     margin: 20px;
-    border-radius: 5px;
-    padding: 2%;
+    border-radius: 10px;
+    padding: 10px;
     height: fit-content;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
 }
-.laps{
-    height: 28px;
+
+.rounds:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.laps {
+    height: 32px;
     width: 98%;
-    background-color:rgb(132, 137, 184);
+    background-color: rgb(132, 137, 184);
     display: flex;
+    justify-content: space-between;
     color: white;
-    font-size: 20px;
+    font-size: 18px;
     border-radius: 5px;
-    margin-bottom: 5px;
+    margin-bottom: 8px;
+    align-items: center;
+    transition: background-color 0.2s ease;
 }
-.lapno{
+
+.laps:hover {
+    background-color: rgb(142, 147, 194);
+}
+
+.lapno {
     margin-left: 15px;
-    margin-top: 2px;
+    font-weight: bold;
+    min-width: 30px;
 }
-.laptime{
-    margin-left: 30px;
-    margin-top: 2px;
+
+.laptime {
+    margin-right: 15px;
+    font-family: 'Courier New', monospace;
 }
-.totaltime{
+
+.totaltime {
     width: fit-content;
     font-size: 18px;
     background-color: rgb(247, 69, 105);
-    margin-left: 25%;
-    padding: 1%;
+    margin: 10px auto;
+    padding: 8px 15px;
     border-radius: 5px;
+    font-weight: bold;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
-h3{
+
+.stopwatch-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+}
+
+h3 {
     font-size: 40px;
-    height: fit-content;
-    padding: 5px;
+    padding: 5px 20px;
     border-radius: 5px;
-    position:absolute;
-    top: 5%;
-    left: 60%;
-    transform: translate(-10%,-50%);
+    margin-top: 40px;
+    background-color: rgba(255, 255, 255, 0.1);
+    letter-spacing: 2px;
 }
-.box{
+
+.box {
     height: 400px;
     width: 600px;
     background-color: rgba(255, 255, 255, 0.1);
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-10%,-50%);
-}
-.time{
-    height: 50px;
-    width: fit-content;
-    font-size: 60px;
-    padding: 20px;
-    position: relative;
-    top: 30%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-}
-.btns{
-    position: relative;
-    top: 40%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    height: 20px;
-    width: fit-content;
-    padding: 20px;
+    border-radius: 15px;
     display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    position: relative;
 }
-.btns button{
+
+.time {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+.time-display {
+    font-size: 60px;
+    font-family: 'Courier New', monospace;
+    letter-spacing: 2px;
+    font-weight: bold;
+    background-color: rgba(0, 0, 0, 0.2);
+    padding: 20px 30px;
+    border-radius: 10px;
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.time-labels {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 10px;
+    font-size: 14px;
+    opacity: 0.8;
+}
+
+.time-labels span {
+    flex: 1;
+    text-align: center;
+}
+
+.btns {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.btns button {
     height: 50px;
     width: 100px;
-    margin: 10px;
-    border-radius: 3px;
+    border-radius: 8px;
     background-color: transparent;
     color: white;
     border: 1px solid white;
     font-size: 18px;
-    flex: 1 1 50%;
-}
-.start:hover{
-    background-color: #198754;
-    transition: 0.2s ease;
-    border:0;
-}
-.reset:hover{
-    background-color: #dc3545;
-    transition: 0.2s ease;
-    border:0;
-}
-.pause:hover{
-    background-color: #ffc107;
-    transition: 0.2s ease;
-    border:0;
-}
-.lap:hover{
-    background-color:#0dcaf0;
-    transition: 0.2s ease;
-    border:0;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-@media all and (max-width:1200px ) {
-    .container{
-        position: absolute;
-        top: 85%;
-        left: 50%;
-        transform: translate(-50%,-10%);
+.start {
+    border-color: #198754 !important;
+}
+
+.start:hover {
+    background-color: #198754;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.pause {
+    border-color: #ffc107 !important;
+}
+
+.pause:hover {
+    background-color: #ffc107;
+    color: #333 !important;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.reset {
+    border-color: #dc3545 !important;
+}
+
+.reset:hover {
+    background-color: #dc3545;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.lap {
+    border-color: #0dcaf0 !important;
+}
+
+.lap:hover {
+    background-color: #0dcaf0;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.shortcuts {
+    position: absolute;
+    bottom: 20px;
+    text-align: center;
+    font-size: 14px;
+    opacity: 0.7;
+}
+
+@media all and (max-width: 1200px) {
+    body {
+        flex-direction: column;
+        align-items: center;
     }
-    h3{
-        position: absolute;
-        top: 2%;
-        left: 50%;
-        transform: translate(-50%,-10%);
+    
+    .container {
+        width: 80%;
+        max-width: 430px;
+        margin: 20px auto;
+        height: 400px;
     }
-    .box{
-        position: absolute;
-        top: 45%;
-        left: 50%;
-        transform: translate(-50%,-50%);
+    
+    .box {
+        width: 80%;
+        max-width: 600px;
+        height: 350px;
+        margin: 20px auto;
+    }
+    
+    h3 {
+        margin-top: 20px;
+        font-size: 32px;
     }
 }
-@media all and (max-width:600px) {
-    .box{
-        position: absolute;
-        top: 45%;
-        left: 50%;
-        transform: translate(-50%,-50%);
-        width: 80%;
+
+@media all and (max-width: 600px) {
+    .box {
+        width: 90%;
         height: 300px;
     }
-    .container{
-        width: 95%;
-        margin: 10px;
+    
+    .time-display {
+        font-size: 36px;
+        padding: 15px;
     }
-    .time{
-        height: 30px;
-        width: fit-content;
-        font-size: 30px;
+    
+    .btns {
+        flex-wrap: wrap;
     }
-    .btns{
-        display: flex;
-        flex-direction: column;
-        position: absolute;
-        bottom: 10%;
-    }
-    .headname{
-        width: 80%;
-        font-size: 30px;
-    }
-    .btns{
-        height: 100px;
-        width: 80%;
-        position: absolute;
-        top: 65%;
-        place-items: center;
-        padding: 0;
-        display: grid;
-        grid-template-columns: repeat(2,1fr);
-    }
+    
     .btns button {
-        height: 35px;
-        width: 80px;
+        height: 40px;
+        width: 90px;
+        font-size: 16px;
+        margin: 5px;
+    }
+    
+    h3 {
+        font-size: 24px;
+    }
+    
+    .container {
+        width: 90%;
+        height: 350px;
+    }
+    
+    .rounds {
+        margin: 10px;
+        padding: 8px;
+    }
+    
+    .laps {
+        height: 28px;
+        font-size: 16px;
+    }
+    
+    .totaltime {
+        font-size: 16px;
+        padding: 5px 10px;
+    }
+    
+    .shortcuts {
+        bottom: 10px;
+        font-size: 12px;
     }
 }
